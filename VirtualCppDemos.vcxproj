@@ -101,6 +101,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,9 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="char8_t_demo.cpp" />
+    <ClCompile Include="constexpr_for_algorithm_and_utility.cpp" />
     <ClCompile Include="contains_demo.cpp" />
+    <ClCompile Include="erase_if_demo.cpp" />
     <ClCompile Include="heterogeneous_unordered_lookup_demo.cpp" />
     <ClCompile Include="charconv_demo.cpp" />
+    <ClCompile Include="is_const_evaluated_demo.cpp" />
     <ClCompile Include="string_starts_ends_demo.cpp" />
     <ClCompile Include="VirtualCppDemos.cpp" />
   </ItemGroup>

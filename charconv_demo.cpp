@@ -7,28 +7,28 @@
 
 void to_chars_demo()
 {
-    std::cout << "to_chars:\n";
+    std::cout << "\nto_chars:\n";
     std::array<char, 20> chars_array;
 
     std::to_chars_result result = std::to_chars(chars_array.data(), chars_array.data() + chars_array.size(), 727);	
-    std::cout << std::string_view(chars_array.data(), result.ptr - chars_array.data()) << "; ec: " << static_cast<int>(result.ec) << std::endl;
+    std::cout << std::string_view(chars_array.data(), std::distance(chars_array.data(), result.ptr)) << "; ec: " << static_cast<int>(result.ec) << std::endl;
 
     result = std::to_chars(chars_array.data(), chars_array.data() + chars_array.size(), 727, 16 /* hex */);
-    std::cout << std::string_view(chars_array.data(), result.ptr - chars_array.data()) << "; ec: " << static_cast<int>(result.ec) << std::endl;
+    std::cout << std::string_view(chars_array.data(), std::distance(chars_array.data(), result.ptr)) << "; ec: " << static_cast<int>(result.ec) << std::endl;
 
     result = std::to_chars(chars_array.data(), chars_array.data() + chars_array.size(), 727, 2 /* binary */);
-    std::cout << std::string_view(chars_array.data(), result.ptr - chars_array.data()) << "; ec: " << static_cast<int>(result.ec) << std::endl;
+    std::cout << std::string_view(chars_array.data(), std::distance(chars_array.data(), result.ptr)) << "; ec: " << static_cast<int>(result.ec) << std::endl;
 
     result = std::to_chars(chars_array.data(), chars_array.data() + chars_array.size(), 22/7.0);
-    std::cout << std::string_view(chars_array.data(), result.ptr - chars_array.data()) << "; ec: " << static_cast<int>(result.ec) << std::endl;
+    std::cout << std::string_view(chars_array.data(), std::distance(chars_array.data(), result.ptr)) << "; ec: " << static_cast<int>(result.ec) << std::endl;
 
     result = std::to_chars(chars_array.data(), chars_array.data() + chars_array.size(), static_cast<long double>(72230340329497), std::chars_format::scientific, 6);
-    std::cout << std::string_view(chars_array.data(), result.ptr - chars_array.data()) << "; ec: " << static_cast<int>(result.ec) << std::endl;
+    std::cout << std::string_view(chars_array.data(), std::distance(chars_array.data(), result.ptr)) << "; ec: " << static_cast<int>(result.ec) << std::endl;
 }
 
 void from_chars_demo()
 {
-    std::cout << "from_chars:\n";
+    std::cout << "\nfrom_chars:\n";
     
     long double value;
     std::array chars_array = std::to_array("2020");

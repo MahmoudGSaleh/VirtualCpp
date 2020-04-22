@@ -7,6 +7,9 @@ void string_starts_ends_with_demo();
 void char8_t_demo();
 void charconv_demo();
 void heterogeneous_unordered_lookup_demo();
+void consistent_container_erasure_demo();
+void is_const_evaluated_demo();
+void constexpr_for_algorithm_and_utility_demo();
 
 int main()
 {
@@ -25,4 +28,12 @@ int main()
 	//// 5: Heterogeneous lookup for unordered containers
 	//heterogeneous_unordered_lookup_demo();
 
+	//// 6. Consistent Container Erasure from Library Fundamentals 2
+	//consistent_container_erasure_demo();
+
+	//// 7. std::is_constant_evaluated()
+	//is_const_evaluated_demo();
+
+	// 8. constexpr for <algorithm> And <utility>
+	constexpr_for_algorithm_and_utility_demo();
 }
