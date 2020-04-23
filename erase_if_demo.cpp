@@ -9,20 +9,26 @@
 // To demonstrate deprecation
 // #include <experimental/string>
 
-struct is_vowel {
-	bool operator()(const char c) const {
+struct is_vowel
+{
+	bool operator()(const char c) const
+	{
 		return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 	}
 };
 
-struct is_odd {
-	bool operator()(const int i) const {
+struct is_odd
+{
+	bool operator()(const int i) const
+	{
 		return i % 2 != 0;
 	}
 };
 
-struct is_first_odd {
-	bool operator()(const std::pair<const int, int>& p) const {
+struct is_first_odd
+{
+	bool operator()(const std::pair<const int, int>& p) const
+	{
 		return p.first % 2 != 0;
 	}
 };
@@ -54,7 +60,7 @@ void erase_demo()
 	// NOTE: the examples here are compiled against VS 16.6, which didn't include an implementation for P1115R3: https://wg21.link/P1115R3
 	// P1115R3 requires erase() and erase_if() to return the number of removed elements
 	// GH-566 (https://github.com/microsoft/STL/pull/566) fixes that and the fix will be included in VS 16.7.
-	// TODO: Update the samples to account for return type of erase() and erase_if()
+	// TODO: Update the samples to account for return of erase() and erase_if()
 
 
 	std::cout << "\nerase() demo\n";

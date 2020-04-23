@@ -10,6 +10,8 @@ void heterogeneous_unordered_lookup_demo();
 void consistent_container_erasure_demo();
 void is_const_evaluated_demo();
 void constexpr_for_algorithm_and_utility_demo();
+void span_demo();
+void ranges_demo();
 
 int main()
 {
@@ -22,8 +24,8 @@ int main()
 	//// 3: char8_t: A type for UTF-8 characters and strings
 	//char8_t_demo();
 
-	// 4. Elementary character conversion
-	charconv_demo();
+	//// 4. Elementary character conversion
+	//charconv_demo();
 
 	//// 5: Heterogeneous lookup for unordered containers
 	//heterogeneous_unordered_lookup_demo();
@@ -34,6 +36,14 @@ int main()
 	//// 7. std::is_constant_evaluated()
 	//is_const_evaluated_demo();
 
-	// 8. constexpr for <algorithm> And <utility>
-	constexpr_for_algorithm_and_utility_demo();
+	//// 8. constexpr for <algorithm> And <utility>
+	//constexpr_for_algorithm_and_utility_demo();
+
+	// 9. <span>
+	span_demo();
+
+	//// 10. <ranges>
+	//ranges_demo();
+
+
 }
