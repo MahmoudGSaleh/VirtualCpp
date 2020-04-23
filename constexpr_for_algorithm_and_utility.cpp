@@ -9,7 +9,7 @@
 constexpr void constexpr_for_each()
 {
 	constexpr std::array a = std::to_array("Hello C++20");
-	std::for_each(a.begin(), a.end(), [](char c) { /* Do something with c */ });
+	std::for_each(a.begin(), a.end(), [](char c) { /* Do something with c */ (void)c; });
 }
 
 constexpr void constexpr_replace()
@@ -29,11 +29,12 @@ constexpr void constexpr_exchange()
 	int x = 1;
 	int y = 2;
 	auto r = std::exchange(x, y);
+	(void)r;
 }
 
 void constexpr_for_algorithm_and_utility_demo()
 {
-	// Using an example from the feature proposal: http://wg21.link/P0202R3   
+	// Using an example from the feature proposal: http://wg21.link/P0202R3
 
 	// OK
 	constexpr std::array<char, 6> a{ 'H', 'e', 'l', 'l', 'o' };
@@ -49,7 +50,7 @@ void constexpr_for_algorithm_and_utility_demo()
 	constexpr auto it = std::find(a.rbegin(), a.rend(), 'H');
 
 	// Other examples of algoritms that are now constexpr in C++20
-	
+
 	constexpr std::array<char, 6> a2{ 'H', 'e', 'l', 'l', 'o' };
 	constexpr auto b = std::equal(a.begin(), a.end(), a2.begin());
 	constexpr auto r = std::equal_range(a.begin(), a.end(), 'H');
