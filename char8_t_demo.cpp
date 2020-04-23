@@ -1,4 +1,5 @@
-﻿#include <filesystem>
+﻿#include <limits>
+#include <filesystem>
 #include <iostream>
 #include <string>
 
@@ -8,7 +9,13 @@
 // Helper functions
 bool u8string_to_wstring(const std::u8string& input_str, std::wstring& output_str)
 {
-	int count_output_chars = ::MultiByteToWideChar(CP_UTF8, 0, (const char*)input_str.data(), input_str.size(), nullptr, 0);
+	const auto raw_input_size = input_str.size();
+	if (raw_input_size > (std::numeric_limits<int>::max)()) {
+		return false;
+	}
+
+	int clamped_input_size = static_cast<int>(raw_input_size);
+	int count_output_chars = ::MultiByteToWideChar(CP_UTF8, 0, reinterpret_cast<const char*>(input_str.data()), clamped_input_size, nullptr, 0);
 
 	if (count_output_chars == 0)
 	{
@@ -16,7 +23,7 @@ bool u8string_to_wstring(const std::u8string& input_str, std::wstring& output_st
 	}
 
 	output_str.resize(count_output_chars);
-	return (::MultiByteToWideChar(CP_UTF8, 0, (char*)input_str.data(), input_str.size(), &output_str.data()[0], count_output_chars) > 0);
+	return (::MultiByteToWideChar(CP_UTF8, 0, reinterpret_cast<const char*>(input_str.data()), clamped_input_size, output_str.data(), count_output_chars) > 0);
 }
 
 void char8_t_basic_demo()

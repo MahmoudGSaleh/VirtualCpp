@@ -21,14 +21,14 @@ struct transparent_string_equal {
 	}
 };
 
-void unordered_map_demo() 
+void unordered_map_demo()
 {
 	std::cout << "std::unordered_map:\n";
 
 	std::unordered_map<std::string, int, transparent_string_hasher, transparent_string_equal>  demo_unordered_map = {
-   {"apples",  1},
-   {"oranges", 2},
-   {"bananas", 3} };
+		{"apples",  1},
+		{"oranges", 2},
+		{"bananas", 3} };
 
 	std::string key = "apples";
 	std::cout << "Key \"" << key << "\" found: " << demo_unordered_map.contains(key) << "\n";
@@ -47,9 +47,9 @@ void unordered_set_demo()
 	std::cout << "std::unordered_set:\n";
 
 	std::unordered_set<std::string, transparent_string_hasher, std::equal_to<>>  demo_unordered_set = {
-	   {"apples"},
-	   {"oranges"},
-	   {"bananas"} };
+		{"apples"},
+		{"oranges"},
+		{"bananas"} };
 
 	std::string key = "apples";
 	std::cout << "Key \"" << key << "\" found: " << demo_unordered_set.contains(key) << "\n";

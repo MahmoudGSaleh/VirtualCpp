@@ -64,7 +64,7 @@ void erase_demo()
 
 
 	std::cout << "\nerase() demo\n";
-	
+
 	// NOTE: std::experiemental has been deprectaed. If used in C++20, a warning like this will be issues:
 	//    Error	C4996	'std::experimental::fundamentals_v2::erase': warning STL4026 : std::experimental::erase() and std::experimental::erase_if() 
 	//    are deprecated by Microsoft and will be REMOVED. They are superseded by std::erase() and std::erase_if().
