@@ -28,10 +28,10 @@ void is_const_evaluated_demo()
 
 	const int val_b = square(4);
 	std::cout << val_b << std::endl;
-	
+
 	constexpr int val_c = square(5);
 	std::cout << val_b << std::endl;
-	
+
 	const int val_d = square(val_a);
 	std::cout << val_d << std::endl;
 

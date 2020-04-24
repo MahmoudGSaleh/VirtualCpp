@@ -34,7 +34,7 @@ constexpr void constexpr_exchange()
 
 void constexpr_for_algorithm_and_utility_demo()
 {
-	// Using an example from the feature proposal: http://wg21.link/P0202R3
+	// Using an example from the feature proposal: https://wg21.link/P0202R3
 
 	// OK
 	constexpr std::array<char, 6> a{ 'H', 'e', 'l', 'l', 'o' };

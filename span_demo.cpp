@@ -24,7 +24,7 @@ void print_content(std::span<T> container)
 
 void span_demo()
 {
-	std::array s = std::to_array({ 1, 2, 4 });
+	std::array s = { 1, 2, 4 };
 	print_content<int>(s);
 
 	std::vector<int> v = { 1, 2, 3, 5, 7, 10 };
