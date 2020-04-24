@@ -1,5 +1,5 @@
-// VirtualCppDemos.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 // C++ features demos
 void associative_container_contains_demo();

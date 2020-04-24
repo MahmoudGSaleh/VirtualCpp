@@ -1,4 +1,7 @@
-﻿#include <limits>
+﻿// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+#include <limits>
 #include <filesystem>
 #include <iostream>
 #include <string>
@@ -10,7 +13,7 @@
 bool u8string_to_wstring(const std::u8string& input_str, std::wstring& output_str)
 {
 	const auto raw_input_size = input_str.size();
-	if (raw_input_size > (std::numeric_limits<int>::max)()) {
+	if (raw_input_size > static_cast<size_t>((std::numeric_limits<int>::max)())) {
 		return false;
 	}
 
