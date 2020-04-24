@@ -86,11 +86,9 @@ void iterate_span()
 
 void span_demo()
 {
-
 	create_span();
 
 	modify_span_elements();
 
 	iterate_span();
-
 }

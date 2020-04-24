@@ -42,17 +42,16 @@ void unordered_map_demo()
 	std::cout << "Key \"bananas\"sv found: " << demo_unordered_map.contains("bananas"sv) << "\n";
 
 	std::cout << "Key \"oranges\" found: " << (demo_unordered_map.find("oranges") != demo_unordered_map.end()) << "\n";
-
 }
 
 void unordered_set_demo()
 {
 	std::cout << "std::unordered_set:\n";
 
-	std::unordered_set<std::string, transparent_string_hasher, std::equal_to<>>  demo_unordered_set = {
-		{"apples"},
-		{"oranges"},
-		{"bananas"} };
+	std::unordered_set<std::string, transparent_string_hasher, std::equal_to<>> demo_unordered_set = {
+		"apples",
+		"oranges",
+		"bananas" };
 
 	std::string key = "apples";
 	std::cout << "Key \"" << key << "\" found: " << demo_unordered_set.contains(key) << "\n";

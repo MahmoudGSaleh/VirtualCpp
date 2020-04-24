@@ -4,28 +4,32 @@
 #include <iostream>
 #include <type_traits>
 
-constexpr int square(const int x) {
-	if (std::is_constant_evaluated()) {
+constexpr int square(const int x)
+{
+	if (std::is_constant_evaluated())
+	{
 		return 1000 + x * x;
 	}
-	else {
+	else
+	{
 		return x * x;
 	}
 }
 
-int cube(const int x) {
-	if (std::is_constant_evaluated()) {
+int cube(const int x)
+{
+	if (std::is_constant_evaluated())
+	{
 		return 2000 + x * x * x;
 	}
-	else {
+	else
+	{
 		return x * x * x;
 	}
 }
 
-
-void is_const_evaluated_demo()
+void is_constant_evaluated_demo()
 {
-
 	int val_a = square(3);
 	std::cout << val_a << std::endl;
 
@@ -43,5 +47,4 @@ void is_const_evaluated_demo()
 
 	const int val_f = cube(8);
 	std::cout << val_f << std::endl;
-
 }

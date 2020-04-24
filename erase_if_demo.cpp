@@ -65,10 +65,9 @@ void erase_demo()
 	// GH-566 (https://github.com/microsoft/STL/pull/566) fixes that and the fix will be included in VS 16.7.
 	// TODO: Update the samples to account for return of erase() and erase_if()
 
-
 	std::cout << "\nerase() demo\n";
 
-	// NOTE: std::experiemental has been deprecated. If used in C++20, a warning like this will be issued:
+	// NOTE: std::experimental::erase() has been deprecated. If used in C++20, a warning like this will be issued:
 	//    Error	C4996	'std::experimental::fundamentals_v2::erase': warning STL4026 : std::experimental::erase() and std::experimental::erase_if()
 	//    are deprecated by Microsoft and will be REMOVED. They are superseded by std::erase() and std::erase_if().
 	//    You can define _SILENCE_EXPERIMENTAL_ERASE_DEPRECATION_WARNING to acknowledge that you have received this warning.

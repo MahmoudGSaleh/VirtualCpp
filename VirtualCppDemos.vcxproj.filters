@@ -36,9 +36,6 @@
     <ClCompile Include="erase_if_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="is_const_evaluated_demo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="constexpr_for_algorithm_and_utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="span_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="is_constant_evaluated_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

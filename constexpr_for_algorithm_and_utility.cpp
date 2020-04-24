@@ -1,9 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-#include <array>
 #include <algorithm>
-#include <string>
+#include <array>
 #include <vector>
 #include <utility>
 
@@ -51,10 +50,16 @@ void constexpr_for_algorithm_and_utility_demo()
 	// Compiles with no errors in C++20 /std:c++latest
 	constexpr auto it = std::find(a.rbegin(), a.rend(), 'H');
 
-	// Other examples of algoritms that are now constexpr in C++20
+	// Other examples of algorithms that are now constexpr in C++20
+	
+	constexpr std::array<int, 5> a1{ 1, 2, 3, 4, 5 };
+	static_assert(std::is_sorted(a1.begin(), a1.end()));
 
 	constexpr std::array<char, 6> a2{ 'H', 'e', 'l', 'l', 'o' };
+
 	constexpr auto b = std::equal(a.begin(), a.end(), a2.begin());
+	
 	constexpr auto r = std::equal_range(a.begin(), a.end(), 'H');
+	
 	constexpr auto s = std::binary_search(a.begin(), a.end(), 'H');
 }
