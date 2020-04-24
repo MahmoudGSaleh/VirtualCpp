@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+// Demos MSVC STL implementation for https://wg21.link/P0919R3 and https://wg21.link/P1690R1  
+
 #include <iostream>
 #include <string_view>
 #include <string>
@@ -16,7 +18,7 @@ struct transparent_string_hasher {
 	}
 };
 
-// Alternatively, for this particular sample, std::equal_to<> could be used for 'Pred' template parameter, as in the unordered_set examples
+// Alternatively, based on a refinement, https://wg21.link/P1690R1, std::equal_to<> could be used for 'Pred' template parameter
 struct transparent_string_equal {
 	using is_transparent = void; // For the lookup overloads to work, 'Pred::is_transparent' must be valid and denote a type
 	bool operator()(const std::string_view lhs, const std::string_view rhs) const noexcept {
@@ -34,14 +36,14 @@ void unordered_map_demo()
 		{"bananas", 3} };
 
 	std::string key = "apples";
-	std::cout << "Key \"" << key << "\" found: " << demo_unordered_map.contains(key) << "\n";
+	std::cout << "Key \"" << key << "\" found: " << demo_unordered_map.contains(key) << std::endl;
 
 	std::string_view k_view = "vegetables";
-	std::cout << "Key \"" << k_view << "\"sv found: " << demo_unordered_map.contains(k_view) << "\n";
+	std::cout << "Key \"" << k_view << "\"sv found: " << demo_unordered_map.contains(k_view) << std::endl;
 
-	std::cout << "Key \"bananas\"sv found: " << demo_unordered_map.contains("bananas"sv) << "\n";
+	std::cout << "Key \"bananas\"sv found: " << demo_unordered_map.contains("bananas"sv) << std::endl;
 
-	std::cout << "Key \"oranges\" found: " << (demo_unordered_map.find("oranges") != demo_unordered_map.end()) << "\n";
+	std::cout << "Key \"oranges\" found: " << (demo_unordered_map.find("oranges") != demo_unordered_map.end()) << std::endl;
 }
 
 void unordered_set_demo()
@@ -54,14 +56,14 @@ void unordered_set_demo()
 		"bananas" };
 
 	std::string key = "apples";
-	std::cout << "Key \"" << key << "\" found: " << demo_unordered_set.contains(key) << "\n";
+	std::cout << "Key \"" << key << "\" found: " << demo_unordered_set.contains(key) << std::endl;
 
 	std::string_view k_view = "vegetables";
-	std::cout << "Key \"" << k_view << "\"sv found: " << demo_unordered_set.contains(k_view) << "\n";
+	std::cout << "Key \"" << k_view << "\"sv found: " << demo_unordered_set.contains(k_view) << std::endl;
 
-	std::cout << "Key \"bananas\"sv found: " << demo_unordered_set.contains("bananas"sv) << "\n";
+	std::cout << "Key \"bananas\"sv found: " << demo_unordered_set.contains("bananas"sv) << std::endl;
 
-	std::cout << "Key \"oranges\" found: " << (demo_unordered_set.find("oranges") != demo_unordered_set.end()) << "\n";
+	std::cout << "Key \"oranges\" found: " << (demo_unordered_set.find("oranges") != demo_unordered_set.end()) << std::endl;
 }
 
 

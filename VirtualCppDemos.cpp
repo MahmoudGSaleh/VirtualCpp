@@ -37,13 +37,11 @@ int main()
 	//is_constant_evaluated_demo();
 
 	// 8. constexpr for <algorithm> And <utility>
-	constexpr_for_algorithm_and_utility_demo();
+	//constexpr_for_algorithm_and_utility_demo();
 
 	// 9. <span>
 	//span_demo();
 
 	// 10. <ranges>
 	//ranges_demo();
-
-
 }

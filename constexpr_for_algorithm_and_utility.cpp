@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+// Demos MSVC STL implementation for https://wg21.link/P0202R3 
+
 #include <algorithm>
 #include <array>
 #include <vector>
@@ -51,15 +53,15 @@ void constexpr_for_algorithm_and_utility_demo()
 	constexpr auto it = std::find(a.rbegin(), a.rend(), 'H');
 
 	// Other examples of algorithms that are now constexpr in C++20
-	
+
 	constexpr std::array<int, 5> a1{ 1, 2, 3, 4, 5 };
 	static_assert(std::is_sorted(a1.begin(), a1.end()));
 
 	constexpr std::array<char, 6> a2{ 'H', 'e', 'l', 'l', 'o' };
 
 	constexpr auto b = std::equal(a.begin(), a.end(), a2.begin());
-	
+
 	constexpr auto r = std::equal_range(a.begin(), a.end(), 'H');
-	
+
 	constexpr auto s = std::binary_search(a.begin(), a.end(), 'H');
 }

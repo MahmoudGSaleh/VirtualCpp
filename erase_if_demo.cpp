@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+// Demos MSVC STL implementation for https://wg21.link/P1209R0 
+
 #include <deque>
 #include <iostream>
 #include <map>
@@ -42,7 +44,7 @@ void print_list(const char* message, const T& list)
 	std::cout << message << ": { ";
 	for (auto const& element : list)
 	{
-		std::cout << "{" << element << "}, ";
+		std::cout << element << " ";
 	}
 	std::cout << " }; size = " << list.size() << std::endl;
 }
@@ -53,7 +55,7 @@ void print_map(const char* message, const T& map)
 	std::cout << message << ": { ";
 	for (auto const& pair : map)
 	{
-		std::cout << "{" << pair.first << ": " << pair.second << "}, ";
+		std::cout << "{" << pair.first << ", " << pair.second << "} ";
 	}
 	std::cout << " }; size = " << map.size() << std::endl;
 }

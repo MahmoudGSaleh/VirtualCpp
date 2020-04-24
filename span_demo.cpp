@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+// Demos MSVC STL implementation for https://wg21.link/P0122R7 (plus various patches)
+
 #include <iostream>
 #include <algorithm>
 #include <array>
@@ -52,7 +54,7 @@ void create_span()
 	std::span<int> another_int_span(int_vector.begin(), int_vector.end());
 	print_span<int>(int_span);
 
-	// This won't work since span is non-owning and the argument cannot be referenced
+	// This won't work since span is non-owning, so the argument cannot be referenced
 	// std::span<int> another_int_span(std::to_array({ 1, 2, 4 }));
 }
 
