@@ -30,7 +30,7 @@ void char8_t_basic_demo()
 {
 	// The following now fails in C++20 (ill-formed). It was well-formed in C++17 and C++14
 	//   error C2440 : 'initializing' : cannot convert from 'const char8_t [31]' to 'const char *'
-	//   message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast 
+	//   message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
 
 	// const char* old_str = u8"This is a UTF-8 encoded string";
 
@@ -59,11 +59,11 @@ void char8_t_basic_demo()
 
 void char8_t_path_demo()
 {
-	// 'u8path' is deprectaed in C++20
-	//    error C4996 : 'std::filesystem::u8path' : 
-	//    warning STL4021 : The std::filesystem::u8path() overloads are deprecated in C++20. 
-	//    The constructors of std::filesystem::path provide equivalent functionality via construction from u8string, u8string_view, 
-	//    or iterators with value_type char8_t.You can define _SILENCE_CXX20_U8PATH_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS 
+	// 'u8path' is deprecated in C++20
+	//    error C4996 : 'std::filesystem::u8path' :
+	//    warning STL4021 : The std::filesystem::u8path() overloads are deprecated in C++20.
+	//    The constructors of std::filesystem::path provide equivalent functionality via construction from u8string, u8string_view,
+	//    or iterators with value_type char8_t. You can define _SILENCE_CXX20_U8PATH_DEPRECATION_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS
 	//    to acknowledge that you have received this warning.
 
 	// auto path = std::filesystem::u8path("filename");
@@ -71,10 +71,10 @@ void char8_t_path_demo()
 	// Instead we use a new specialized path for <char8_t>
 	std::u8string my_file_path = u8"C:\\RootFolder\\MyFile.txt";
 	std::filesystem::path my_path = std::filesystem::path(my_file_path);
-	std::cout << "File path: " << my_path << "\n"
+	std::cout << "File path: " << my_path << '\n'
 		<< "file name: " << my_path.filename() << '\n'
 		<< "relative path: " << my_path.relative_path() << '\n'
-		<< "extenion: " << my_path.extension() << '\n';
+		<< "extension: " << my_path.extension() << '\n';
 }
 
 void char8_t_demo()

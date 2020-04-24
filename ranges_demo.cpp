@@ -49,7 +49,7 @@ void ranges_copy_demo()
 		});
 	print_range("copy_if %3 output", output, r2);
 
-	// copy only positive numbers from a vector
+	// copy only non-negative numbers from a vector
 	std::vector<int> v = { 25, 15, 5, 0, -5, -15 };
 	auto r3 = std::ranges::copy_if(v, output, [](const int i) {
 		return !(i < 0);

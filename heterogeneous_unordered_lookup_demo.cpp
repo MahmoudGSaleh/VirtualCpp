@@ -7,15 +7,15 @@
 using namespace std::literals;
 
 struct transparent_string_hasher {
-	using is_transparent = void; // For the lookup overloads to work, 'Hash::is_transparent' must be valid and denotes a type
+	using is_transparent = void; // For the lookup overloads to work, 'Hash::is_transparent' must be valid and denote a type
 	size_t operator()(const std::string_view target) const noexcept {
 		return std::hash<std::string_view>{}(target);
 	}
 };
 
-// Alternatively, for this particular sample, std::equal_to<> could be used for 'Pred' template paramter, as in the unordered_set examples
+// Alternatively, for this particular sample, std::equal_to<> could be used for 'Pred' template parameter, as in the unordered_set examples
 struct transparent_string_equal {
-	using is_transparent = void; // For the lookup overloads to work, 'Pred::is_transparent' must be valid and denotes a type
+	using is_transparent = void; // For the lookup overloads to work, 'Pred::is_transparent' must be valid and denote a type
 	bool operator()(const std::string_view lhs, const std::string_view rhs) const noexcept {
 		return lhs == rhs;
 	}
