@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-// Demos MSVC STL implementation for https://wg21.link/P0896R4 
+// Demos MSVC STL implementation for https://wg21.link/P0896R4
 
 #include <algorithm>
 #include <array>

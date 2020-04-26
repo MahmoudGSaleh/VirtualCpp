@@ -24,11 +24,11 @@ int main()
 	// 3: char8_t: A type for UTF-8 characters and strings
 	//char8_t_demo();
 
-	// 4. Elementary character conversion
-	//charconv_demo();
-
-	// 5: Heterogeneous lookup for unordered containers
+	// 4: Heterogeneous lookup for unordered containers
 	//heterogeneous_unordered_lookup_demo();
+
+	// 5. Elementary string conversion
+	//charconv_demo();
 
 	// 6. Consistent Container Erasure from Library Fundamentals 2
 	//consistent_container_erasure_demo();

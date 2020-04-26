@@ -12,7 +12,7 @@
 #include <unordered_map>
 
 // To demonstrate deprecation
-// #include <experimental/string>
+//#include <experimental/string>
 
 struct is_vowel
 {
@@ -69,14 +69,15 @@ void erase_demo()
 
 	std::cout << "\nerase() demo\n";
 
+	std::string str{ "visual studio" };
+
 	// NOTE: std::experimental::erase() has been deprecated. If used in C++20, a warning like this will be issued:
 	//    Error	C4996	'std::experimental::fundamentals_v2::erase': warning STL4026 : std::experimental::erase() and std::experimental::erase_if()
 	//    are deprecated by Microsoft and will be REMOVED. They are superseded by std::erase() and std::erase_if().
 	//    You can define _SILENCE_EXPERIMENTAL_ERASE_DEPRECATION_WARNING to acknowledge that you have received this warning.
 
-	//std::experimental::erase(str2, 'u');
+	//std::experimental::erase(str, 'u');
 
-	std::string str{ "visual studio" };
 	std::cout << "Before erase: \"" << str << "\"; size = " << str.size() << std::endl;
 	std::erase(str, 'u');
 	std::cout << "After erase: \"" << str << "\"; size = " << str.size() << std::endl;

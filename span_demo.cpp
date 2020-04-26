@@ -16,26 +16,9 @@ void print_span(std::span<T> span)
 	std::cout << "[";
 	for (const auto& element : span)
 	{
-		std::cout << element << ", ";
+		std::cout << element << " ";
 	}
 	std::cout << "] (" << span.size() << " elements)\n";
-}
-
-void modify_span_elements()
-{
-	std::cout << "\nmodify span demo:\n";
-
-	std::vector<std::string> vector_of_str = { "span", "view", "contigeous" };
-	std::span<std::string> span_of_str(vector_of_str);
-
-	print_span<std::string>(span_of_str);
-
-	// Modify individual elements
-	for (auto&& str : span_of_str) {
-		str[0] = (char)std::toupper(str[0]);
-	}
-
-	print_span<std::string>(span_of_str);
 }
 
 void create_span()
@@ -57,6 +40,24 @@ void create_span()
 	// This won't work since span is non-owning, so the argument cannot be referenced
 	// std::span<int> another_int_span(std::to_array({ 1, 2, 4 }));
 }
+
+void modify_span_elements()
+{
+	std::cout << "\nmodify span demo:\n";
+
+	std::vector<std::string> vector_of_str = { "span", "view", "contigeous" };
+	std::span<std::string> span_of_str(vector_of_str);
+
+	print_span<std::string>(span_of_str);
+
+	// Modify individual elements
+	for (auto&& str : span_of_str) {
+		str[0] = (char)std::toupper(str[0]);
+	}
+
+	print_span<std::string>(span_of_str);
+}
+
 
 void iterate_span()
 {

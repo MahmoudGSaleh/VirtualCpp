@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-// Demos MSVC STL implementation for https://wg21.link/P0202R3 
+// Demos MSVC STL implementation for https://wg21.link/P0202R3
 
 #include <algorithm>
 #include <array>
@@ -46,8 +46,7 @@ void constexpr_for_algorithm_and_utility_demo()
 	//   error C2131 : expression did not evaluate to a constant
 	//   message : failure was caused by call of undefined function or one not declared 'constexpr'
 	//   message : see usage of 'std::find'
-
-
+	
 	// std::find is now constexpr
 	// Compiles with no errors in C++20 /std:c++latest
 	constexpr auto it = std::find(a.rbegin(), a.rend(), 'H');

@@ -56,6 +56,7 @@ void char8_t_usage_demo()
 
 	// traits starts_with
 	bool starts_with = u8_str.starts_with(u8_search_str);
+	bool starts_with_v2 = u8_str.starts_with(u8"This");
 
 	// There is no straightforward way to print utf8 strings directly to the console, so we convert to wstring first, and use std::wcout
 	std::wstring w_str{};
@@ -65,6 +66,7 @@ void char8_t_usage_demo()
 	u8string_to_wstring(u8_search_str, w_search_str);
 
 	std::wcout << std::quoted(w_str) << L".starts_with(" << std::quoted(w_search_str) << "): " << starts_with << std::endl;
+	std::wcout << std::quoted(w_str) << L".starts_with(" << std::quoted(L"This") << "): " << starts_with_v2 << std::endl;
 
 	// hash
 	std::size_t u8_str_hash = std::hash<std::u8string>{}(u8_str);
@@ -88,7 +90,7 @@ void char8_t_path_demo()
 	// auto path = std::filesystem::u8path("filename");
 
 	// Instead we use a new specialized path for <char8_t>
-	std::u8string my_file_path = u8R"("C:\Windows\System32\ŚŎMĘ FĨĻĔ.ēxţ")";
+	std::u8string my_file_path = u8R"(C:\Windows\System32\ŚŎMĘ FĨĻĔ.ēxţ)";
 	std::filesystem::path my_path(my_file_path);
 	std::wcout << L"File path: " << my_path << std::endl
 		<< L"file name: " << my_path.filename() << std::endl
