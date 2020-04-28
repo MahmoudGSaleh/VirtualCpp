@@ -40,7 +40,7 @@ int main()
 	//constexpr_for_algorithm_and_utility_demo();
 
 	// 9. <span>
-	//span_demo();
+	span_demo();
 
 	// 10. <ranges>
 	//ranges_demo();

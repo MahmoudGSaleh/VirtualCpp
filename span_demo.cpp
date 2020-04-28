@@ -34,11 +34,17 @@ void create_span()
 	std::span<int> int_span(int_vector);
 	print_span<int>(int_span);
 
-	std::span<int> another_int_span(int_vector.begin(), int_vector.end());
-	print_span<int>(int_span);
+	std::span<int> int_span_2(int_vector.begin(), int_vector.end());
+	print_span<int>(int_span_2);
 
-	// This won't work since span is non-owning, so the argument cannot be referenced
-	// std::span<int> another_int_span(std::to_array({ 1, 2, 4 }));
+	// This won't work.
+	//std::span<int> another_int_span(std::to_array({3, 4, 5}));
+
+	std::span<const int> const_int_span(std::to_array({3, 4, 5}));
+	print_span<const int>(const_int_span);
+
+	std::span<const int> const_int_span_2({ 1, 2, 3 });
+	print_span<const int>(const_int_span_2);
 }
 
 void modify_span_elements()
