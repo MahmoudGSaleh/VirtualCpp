@@ -39,7 +39,7 @@ void is_constant_evaluated_demo()
 	std::cout << "square(3) = " << val_b << std::endl;
 
 	constexpr int val_c = square(5);
-	std::cout << "square(5) = " << val_b << std::endl;
+	std::cout << "square(5) = " << val_c << std::endl;
 
 	const int val_d = square(val_a);
 	std::cout << "square(val_a) = " << val_d << std::endl;
